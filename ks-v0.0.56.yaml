@@ -1,0 +1,23 @@
+apiVersion: devops.kubesphere.io/v1alpha1
+kind: Releaser
+metadata:
+  creationTimestamp: null
+  name: ks-v0.0.56
+spec:
+  gitOps:
+    enable: true
+    repository:
+      address: https://github.com/kubesphere-sigs/ks-versions
+      branch: master
+      name: ks-versions
+  phase: draft
+  repositories:
+  - action: release
+    address: https://github.com/kubesphere-sigs/ks
+    branch: master
+    name: ks
+  secret:
+    name: linuxsuren-bot
+    namespace: ks-releaser-system
+  version: v0.0.56
+status: {}
