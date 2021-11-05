@@ -10,7 +10,7 @@ spec:
       address: https://github.com/kubesphere-sigs/ks-versions
       branch: master
       name: ks-versions
-  phase: draft
+  phase: ready
   repositories:
   - action: release
     address: https://github.com/kubesphere-sigs/ks-releaser
