@@ -11,7 +11,7 @@ spec:
       branch: master
       name: ks-versions
     secret: {}
-  phase: draft
+  phase: ready
   repositories:
   - action: release
     address: https://github.com/kubesphere-sigs/ks-releaser
