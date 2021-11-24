@@ -1,0 +1,27 @@
+apiVersion: devops.kubesphere.io/v1alpha1
+kind: Releaser
+metadata:
+  name: ks-devops-v3.2.1-rc.1
+  namespace: ks-version
+spec:
+  gitOps:
+    enable: true
+    repository:
+      address: https://github.com/kubesphere-sigs/ks-versions
+      branch: master
+      name: ks-versions
+      provider: github
+    secret: {}
+  phase: draft
+  repositories:
+  - action: pre-release
+    address: https://github.com/kubesphere/ks-devops
+    branch: master
+    name: ks-devops
+    provider: github
+    version: v3.2.1-rc.1
+  secret:
+    name: linuxsuren-bot
+    namespace: ks-releaser-system
+  version: v3.2.1-rc.1
+status: {}
