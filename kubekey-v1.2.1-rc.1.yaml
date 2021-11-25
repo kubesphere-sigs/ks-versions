@@ -24,7 +24,7 @@ spec:
     provider: github
     version: v1.2.1-rc.1
   secret:
-    name: linuxsuren-bot
-    namespace: ks-releaser-system
+    name: release-bot
+    namespace: release
   version: v1.2.1-rc.1
 status: {}
