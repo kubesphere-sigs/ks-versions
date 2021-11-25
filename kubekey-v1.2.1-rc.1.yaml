@@ -14,7 +14,9 @@ spec:
       branch: master
       name: ks-versions
       provider: github
-    secret: {}
+    secret:
+      name: linuxsuren-bot
+      namespace: ks-releaser-system
   phase: ready
   repositories:
   - action: pre-release
