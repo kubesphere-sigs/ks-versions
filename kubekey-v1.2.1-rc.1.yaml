@@ -1,0 +1,30 @@
+apiVersion: devops.kubesphere.io/v1alpha1
+kind: Releaser
+metadata:
+  creationTimestamp: "2021-11-25T06:07:14Z"
+  labels:
+    app.kubernetes.io/instance: ks-version
+  name: kubekey-v1.2.1-rc.1.yaml
+  namespace: ks-version
+spec:
+  gitOps:
+    enable: true
+    repository:
+      address: https://github.com/kubesphere-sigs/ks-versions
+      branch: master
+      name: ks-versions
+      provider: github
+    secret: {}
+  phase: ready
+  repositories:
+  - action: pre-release
+    address: https://github.com/kubesphere/kubekey
+    branch: release-1.2
+    name: kubekey
+    provider: github
+    version: v1.2.1-rc.1
+  secret:
+    name: linuxsuren-bot
+    namespace: ks-releaser-system
+  version: v1.2.1-rc.1
+status: {}
