@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2021-11-25T06:07:14Z"
   labels:
     app.kubernetes.io/instance: ks-version
-  name: kubekey-v1.2.1-rc.1.yaml
+  name: kubekey-v1.2.1-rc.1
   namespace: ks-version
 spec:
   gitOps:
