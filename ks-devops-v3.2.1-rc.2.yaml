@@ -19,7 +19,7 @@ spec:
   repositories:
   - action: pre-release
     address: https://github.com/kubesphere/ks-devops
-    branch: master
+    branch: release-3.2
     name: ks-devops
     provider: github
     version: v3.2.1-rc.2
