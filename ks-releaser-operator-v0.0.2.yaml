@@ -15,7 +15,7 @@ spec:
       name: ks-versions
       provider: github
     secret: {}
-  phase: draft
+  phase: ready
   repositories:
   - action: pre-release
     address: https://github.com/kubesphere-sigs/ks-releaser-operator
