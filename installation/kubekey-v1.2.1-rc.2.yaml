@@ -1,11 +1,17 @@
 apiVersion: devops.kubesphere.io/v1alpha1
 kind: Releaser
 metadata:
-  creationTimestamp: "2021-11-25T06:53:04Z"
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"devops.kubesphere.io/v1alpha1","kind":"Releaser","metadata":{"annotations":{},"creationTimestamp":"2021-11-25T06:53:04Z","labels":{"app.kubernetes.io/instance":"ks-versions"},"name":"kubekey-v1.2.1-rc.2","namespace":"ks-version"},"spec":{"gitOps":{"enable":true,"repository":{"address":"https://github.com/kubesphere-sigs/ks-versions","branch":"master","name":"ks-versions","provider":"github"},"secret":{"name":"linuxsuren-bot","namespace":"ks-releaser-system"}},"phase":"ready","repositories":[{"action":"pre-release","address":"https://github.com/kubesphere/kubekey","branch":"release-1.2","name":"kubekey","provider":"github","version":"v1.2.1-rc.2"}],"secret":{"name":"release-bot","namespace":"release"},"version":"v1.2.1-rc.2"},"status":{}}
+    releaser.devops.kubesphere.io/hash: 7d5c558bdc
+  creationTimestamp: "2021-11-25T06:58:15Z"
+  generation: 2
   labels:
-    app.kubernetes.io/instance: ks-version
+    app.kubernetes.io/instance: ks-versions
   name: kubekey-v1.2.1-rc.2
   namespace: ks-version
+  selfLink: /apis/devops.kubesphere.io/v1alpha1/namespaces/ks-version/releasers/kubekey-v1.2.1-rc.2
 spec:
   gitOps:
     enable: true
@@ -17,7 +23,7 @@ spec:
     secret:
       name: linuxsuren-bot
       namespace: ks-releaser-system
-  phase: ready
+  phase: done
   repositories:
   - action: pre-release
     address: https://github.com/kubesphere/kubekey
@@ -29,4 +35,8 @@ spec:
     name: release-bot
     namespace: release
   version: v1.2.1-rc.2
-status: {}
+status:
+  conditions:
+  - conditionType: release
+    message: https://github.com/kubesphere/kubekey was released
+    status: success
