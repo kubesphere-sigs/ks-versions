@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2022-02-18T09:41:37Z"
   labels:
     app.kubernetes.io/instance: ks-versions
-  name: kubekey-v2.0.0-rc.5
+  name: kubekey-v2.0.0
   namespace: ks-version
 spec:
   gitOps:
@@ -17,16 +17,16 @@ spec:
     secret:
       name: linuxsuren-bot
       namespace: ks-releaser-system
-  phase: draft
+  phase: ready
   repositories:
   - action: pre-release
     address: https://github.com/kubesphere/kubekey
     branch: release-2.0
     name: kubekey
     provider: github
-    version: v2.0.0-rc.5
+    version: v2.0.0
   secret:
     name: release-bot
     namespace: release
-  version: v2.0.0-rc.5
+  version: v2.0.0
 status: {}
