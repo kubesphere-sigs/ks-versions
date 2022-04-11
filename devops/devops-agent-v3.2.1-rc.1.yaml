@@ -1,7 +1,17 @@
 apiVersion: devops.kubesphere.io/v1alpha1
 kind: Releaser
 metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"devops.kubesphere.io/v1alpha1","kind":"Releaser","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"ks-versions"},"name":"devops-agent-v3.2.1-rc.1","namespace":"ks-version"},"spec":{"gitOps":{"enable":true,"repository":{"address":"https://github.com/kubesphere-sigs/ks-versions","branch":"master","name":"ks-versions"}},"phase":"ready","repositories":[{"action":"release","address":"https://github.com/kubesphere/devops-agent","branch":"master","name":"devops-agent"}],"secret":{"name":"linuxsuren-bot","namespace":"ks-releaser-system"},"version":"v3.2.1-rc.1"}}
+    releaser.devops.kubesphere.io/hash: 644ff96cdb
+  creationTimestamp: "2021-12-02T02:34:55Z"
+  generation: 2
+  labels:
+    app.kubernetes.io/instance: ks-versions
   name: devops-agent-v3.2.1-rc.1
+  namespace: ks-version
+  selfLink: /apis/devops.kubesphere.io/v1alpha1/namespaces/ks-version/releasers/devops-agent-v3.2.1-rc.1
 spec:
   gitOps:
     enable: true
@@ -9,14 +19,22 @@ spec:
       address: https://github.com/kubesphere-sigs/ks-versions
       branch: master
       name: ks-versions
-  phase: ready
+      provider: github
+    secret: {}
+  phase: done
   repositories:
   - action: release
     address: https://github.com/kubesphere/devops-agent
     branch: master
     name: devops-agent
+    provider: github
+    version: v3.2.1-rc.1
   secret:
     name: linuxsuren-bot
     namespace: ks-releaser-system
   version: v3.2.1-rc.1
-
+status:
+  conditions:
+  - conditionType: release
+    message: https://github.com/kubesphere/devops-agent was released
+    status: success
