@@ -17,7 +17,7 @@ spec:
     secret: {}
   phase: draft
   repositories:
-  - action: release
+  - action: auto
     address: https://github.com/kubesphere/devops-agent
     branch: master
     name: devops-agent
