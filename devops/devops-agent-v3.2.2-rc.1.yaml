@@ -1,0 +1,30 @@
+apiVersion: devops.kubesphere.io/v1alpha1
+kind: Releaser
+metadata:
+  creationTimestamp: "2022-04-13T06:03:02Z"
+  labels:
+    app.kubernetes.io/instance: ks-versions
+  name: devops-agent-v3.2.2-rc.1
+  namespace: ks-version
+spec:
+  gitOps:
+    enable: true
+    repository:
+      address: https://github.com/kubesphere-sigs/ks-versions
+      branch: master
+      name: ks-versions
+      provider: github
+    secret: {}
+  phase: draft
+  repositories:
+  - action: auto
+    address: https://github.com/kubesphere/devops-agent
+    branch: master
+    name: devops-agent
+    provider: github
+    version: v3.2.2-rc.1
+  secret:
+    name: linuxsuren-bot
+    namespace: ks-releaser-system
+  version: v3.2.2-rc.1
+status: {}
