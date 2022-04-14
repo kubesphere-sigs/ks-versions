@@ -1,0 +1,30 @@
+apiVersion: devops.kubesphere.io/v1alpha1
+kind: Releaser
+metadata:
+  creationTimestamp: "2022-04-10T14:42:37Z"
+  labels:
+    app.kubernetes.io/instance: ks-versions
+  name: ks-v0.0.67
+  namespace: ks-version
+spec:
+  gitOps:
+    enable: true
+    repository:
+      address: https://github.com/kubesphere-sigs/ks-versions
+      branch: master
+      name: ks-versions
+      provider: github
+    secret: {}
+  phase: draft
+  repositories:
+  - action: release
+    address: https://github.com/kubesphere-sigs/ks
+    branch: master
+    name: ks
+    provider: github
+    version: v0.0.67
+  secret:
+    name: linuxsuren-bot
+    namespace: ks-releaser-system
+  version: v0.0.67
+status: {}
