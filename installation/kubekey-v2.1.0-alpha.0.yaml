@@ -17,7 +17,7 @@ spec:
     secret:
       name: linuxsuren-bot
       namespace: ks-releaser-system
-  phase: ready
+  phase: done
   repositories:
   - action: pre-release
     address: https://github.com/kubesphere/kubekey
@@ -28,5 +28,5 @@ spec:
   secret:
     name: release-bot
     namespace: release
-  version: kubekey-v2.1.0-alpha.0
+  version: v2.1.0-alpha.0
 status: {}
