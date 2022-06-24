@@ -17,9 +17,9 @@ spec:
     secret: {}
   phase: draft
   repositories:
-  - action: pre-release
+  - action: release
     address: https://github.com/kubesphere/ks-devops
-    branch: master
+    branch: release-3.3
     name: ks-devops
     provider: github
     version: v3.3.0
